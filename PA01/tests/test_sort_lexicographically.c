@@ -24,24 +24,24 @@ void test_one_char_phrase(void)
 {
 	bool result;
 
-	char phrase[] = "a";
-	SORT(phrase, STANDARD);
-	result = CHECK(phrase, STANDARD);
+	char phrase1[] = "a";
+	SORT(phrase1, STANDARD);
+	result = CHECK(phrase1, STANDARD);
 	TEST_CHECK(result == true);
 
-	char phrase[] = "A";
-	SORT(phrase, STANDARD);
-	result = CHECK(phrase, STANDARD);
+	char phrase2[] = "A";
+	SORT(phrase2, STANDARD);
+	result = CHECK(phrase2, STANDARD);
 	TEST_CHECK(result == true);
 
-	char phrase[] = "z";
-	SORT(phrase, REVERSE);
-	result = CHECK(phrase, REVERSE);
+	char phrase3[] = "z";
+	SORT(phrase3, REVERSE);
+	result = CHECK(phrase3, REVERSE);
 	TEST_CHECK(result == true);
 
-	char phrase[] = "Z";
-	SORT(phrase, QWERTY);
-	result = CHECK(phrase, QWERTY);
+	char phrase4[] = "Z";
+	SORT(phrase4, QWERTY);
+	result = CHECK(phrase4, QWERTY);
 	TEST_CHECK(result == true);
 }
 
@@ -49,78 +49,78 @@ void test_two_char_phrase_no_capital(void)
 {
 	bool result;
 
-	char phrase[] = "aa";
-	SORT(phrase, STANDARD);
-	result = CHECK(phrase, STANDARD);
+	char phrase1[] = "aa";
+	SORT(phrase1, STANDARD);
+	result = CHECK(phrase1, STANDARD);
 	TEST_CHECK(result == true);
 	TEST_MSG("Expected: \"aa\"");
-	TEST_MSG("Your output: \"%s\"", phrase);
+	TEST_MSG("Your output: \"%s\"", phrase1);
 
-	char phrase[] = "cg";
-	SORT(phrase, QWERTY);
-	result = CHECK(phrase, QWERTY);
+	char phrase2[] = "cg";
+	SORT(phrase2, QWERTY);
+	result = CHECK(phrase2, QWERTY);
 	TEST_CHECK(result == true);
 	TEST_MSG("Expected: \"gc\"");
-	TEST_MSG("Your output: \"%s\"", phrase);
+	TEST_MSG("Your output: \"%s\"", phrase2);
 
-	char phrase[] = "dv";
-	SORT(phrase, REVERSE);
-	result = CHECK(phrase, REVERSE);
+	char phrase3[] = "dv";
+	SORT(phrase3, REVERSE);
+	result = CHECK(phrase3, REVERSE);
 	TEST_CHECK(result == true);
 	TEST_MSG("Expected: \"vd\"");
-	TEST_MSG("Your output: \"%s\"", phrase);
+	TEST_MSG("Your output: \"%s\"", phrase3);
 }
 
 void test_two_char_phrase_capital(void)
 {
 	bool result;
 
-	char phrase[] = "aA";
-	SORT(phrase, STANDARD);
-	result = CHECK(phrase, STANDARD);
+	char phrase1[] = "aA";
+	SORT(phrase1, STANDARD);
+	result = CHECK(phrase1, STANDARD);
 	TEST_CHECK(result == true);
 	TEST_MSG("Expected: \"Aa\"");
-	TEST_MSG("Your output: \"%s\"", phrase);
+	TEST_MSG("Your output: \"%s\"", phrase1);
 
-	char phrase[] = "ba";
-	SORT(phrase, STANDARD);
-	result = CHECK(phrase, STANDARD);
+	char phrase2[] = "ba";
+	SORT(phrase2, STANDARD);
+	result = CHECK(phrase2, STANDARD);
 	TEST_CHECK(result == true);
 	TEST_MSG("Expected: \"ab\"");
-	TEST_MSG("Your output: \"%s\"", phrase);
+	TEST_MSG("Your output: \"%s\"", phrase2);
 
-	char phrase[] = "ms";
-	SORT(phrase, QWERTY);
-	result = CHECK(phrase, QWERTY);
+	char phrase3[] = "ms";
+	SORT(phrase3, QWERTY);
+	result = CHECK(phrase3, QWERTY);
 	TEST_CHECK(result == true);
 	TEST_MSG("Expected: \"sm\"");
-	TEST_MSG("Your output: \"%s\"", phrase);
+	TEST_MSG("Your output: \"%s\"", phrase3);
 
-	char phrase[] = "Lm";
-	SORT(phrase, REVERSE);
-	result = CHECK(phrase, REVERSE);
+	char phrase4[] = "Lm";
+	SORT(phrase4, REVERSE);
+	result = CHECK(phrase4, REVERSE);
 	TEST_CHECK(result == true);
 	TEST_MSG("Expected: \"mL\"");
-	TEST_MSG("Your output: \"%s\"", phrase);
+	TEST_MSG("Your output: \"%s\"", phrase4);
 }
 
 void test_many_char_phrase(void)
 {
 	bool result;
 
-	char phrase[] = "Hello World";
-	SORT(phrase, STANDARD);
-	result = CHECK(phrase, STANDARD);
+	char phrase1[] = "Hello World";
+	SORT(phrase1, STANDARD);
+	result = CHECK(phrase1, STANDARD);
 	TEST_CHECK(result == true);
 	TEST_MSG("Expected: \"deHllloorW\"");
-	TEST_MSG("Your output: \"%s\"", phrase);
+	TEST_MSG("Your output: \"%s\"", phrase1);
 
-	char phrase[] = "poiuytrewq";
-	SORT(phrase, QWERTY);
-	result = CHECK(phrase, QWERTY);
+	char phrase2[] = "poiuytrewq";
+	SORT(phrase2, QWERTY);
+	result = CHECK(phrase2, QWERTY);
 	TEST_CHECK(result == true);
 	TEST_MSG("Expected: \"qwertyuiop\"");
-	TEST_MSG("Your output: \"%s\"", phrase);
+	TEST_MSG("Your output: \"%s\"", phrase2);
 }
 
 TEST_LIST = {
