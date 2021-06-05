@@ -1,6 +1,6 @@
 # Programming Assignment I
 
-*Last modified: 06/05/2021 at 10:45AM*
+*Last modified: 06/05/2021 at 10:36AM*
 
 *Post on Piazza if you have any questions about the following document so that everyone can benefit from our answer. Otherwise, email me or Zhaoning (see syllabus for our email addresses).*
 
@@ -59,6 +59,8 @@ The provided code is organized as follows:
 * **src**: This directory contains all the source code for this assignment (excluding unit testing code). Specifically, the code you are required to write for this assignment will go into **sort.c** (where you will find two functions to be defined completely). The file **sort.h** contains the declarations of the functions you are defining in **sort.c** (ignore its contents for now). The file **main.c** defines a `main()` function. Right now, it's empty. As you write your code in **sort.c**, you'll want to test it out by writing some test code in `main()`, compile **sort.c** and **main.c** together, and run the executable (more details in the **How do I start?** section).
 * **tests**: This directory contains all the unit testing source code for this assignment. Ignore the contents of these files for now. Just for this assignment, we have provided a complete unit testing suite that you will be able to use easily to make sure your code is correct (more details in the **Testing** section).
 * **Makefile**: The Makefile defines how we want make to manage our files (ignore its contents for now).
+
+**Note:** For now, do not modify this structure. The provided Makefile relies on it to function. Once you learn how to write your own Makefile, you will have the option of re-organizing your however you wish.
 
 ## Background
 
@@ -140,7 +142,7 @@ Capitalized letters take precedence over their corresponding lower case letters.
 
 ### Helper Functions
 
-You will want to (but are not required to) create helper functions as you write your code (e.g. a helper function to swap characters inside the phrase). These helper functions should be defined **outside** of the `#ifndef` preprocessor guardsas much as possible. If you keep the helper function definition inside of these guards, we could run into potential problems during grading if your helper function is used by several required functions.
+You will want to (but are not required to) create helper functions as you write your code (e.g. a helper function to swap characters inside the phrase). These helper functions should be defined **outside** of the `#ifndef` preprocessor guards as much as possible. If you keep the helper function definition inside of these guards, we could run into potential problems during grading if your helper function is used by several required functions.
 
 ## Grading
 
@@ -158,7 +160,7 @@ vim -O sort.c main.c
 ```
 Write your code. You should start with the check function, since, once you know it works, you can use it to verify that the sort function works. As you write code in **sort.c**, write code in **main.c** that calls your functions and tests your code. To compile your code, use:
 ```
-gcc -std=c11 -g -Wall -Wextra -Werror main.c sort.c
+gcc -std=c11 -g -Wall -Wextra -Wvla -Werror main.c sort.c
 ```
 Remember that this produces and executable with the name **a.out**. To give it another name, say **pa01**, use:
 ```
