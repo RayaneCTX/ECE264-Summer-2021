@@ -1,6 +1,11 @@
 # Programming Assignment I
 
 *Last updated: 06/05/2021 at 1:49AM*
+If you have downloaded the code (as described below) before the date above, you'll need to update your local repository. Navigate to your local git repository for this course (it'll probably be the directory named **ECE264-Summer-2021**), and from there, run:
+```
+git pull
+```
+to pull all changes.
 
 ## Setup
 
