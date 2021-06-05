@@ -1,6 +1,6 @@
 # Programming Assignment I
 
-*Last modified: 06/05/2021 at 1:49AM*
+*Last modified: 06/05/2021 at 8:11AM*
 
 ## Setup
 
@@ -82,7 +82,7 @@ Capitalized letters take precedence over their corresponding lower case letters.
 #### Examples
 
 * `check_lexicographical_order("aBc", "abcdefghijklmnopqrstuvwxyz")` should return true,
-* `check_lexicographical_order("Hello World", "abcdefghijklmnopqrstuvwxyz")` should return false,
+* `check_lexicographical_order("HelloWorld", "abcdefghijklmnopqrstuvwxyz")` should return false,
 * `check_lexicographical_order("qweRtY", "qwertyuiopasdfghjklzxcvbnm")` should return true,
 * `check_lexicographical_order("ytrewq", "qwertyuiopasdfghjklzxcvbnm")` should return false.
 
@@ -115,8 +115,8 @@ Capitalized letters take precedence over their corresponding lower case letters.
 
 #### Examples
 
-* `sort_lexicographically("Hello World", "abcdefghijklmnopqrstuvwxyz")` should sort the phrase into `"deHllloorW"`,
-* `sort_lexicographically("Hello World", "qwertyuiopasdfghjklzxcvbnm")` should sort the phrase into `"WeroodHlll"`.
+* `sort_lexicographically("HelloWorld", "abcdefghijklmnopqrstuvwxyz")` should sort the phrase into `"deHllloorW"`,
+* `sort_lexicographically("HelloWorld", "qwertyuiopasdfghjklzxcvbnm")` should sort the phrase into `"WeroodHlll"`.
 
 ## Grading
 
