@@ -43,8 +43,8 @@ TEST_SORT_OBJ_FILES += $(BLDDIR)/sort.o
 # Unit test files for the checking function
 TEST_CHECK_SRC_FILES := $(TSTDIR)/test_check_lexicographical_order.c
 TEST_CHECK_SRC_FILES += $(SRCDIR)/sort.c
-TEST_SORT_OBJ_FILES := $(BLDDIR)/test_check_lexicographical_order.o
-TEST_SORT_OBJ_FILES += $(BLDDIR)/sort.o
+TEST_CHECK_OBJ_FILES := $(BLDDIR)/test_check_lexicographical_order.o
+TEST_CHECK_OBJ_FILES += $(BLDDIR)/sort.o
 
 
 .PHONY: help clean run-debug run-test-factorial
