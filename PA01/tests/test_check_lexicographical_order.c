@@ -71,11 +71,11 @@ void test_many_char_phrase(void)
 {
 	bool result;
 
-	result = CHECK("Hello World", STANDARD);
+	result = CHECK("HelloWorld", STANDARD);
 	TEST_CHECK(result == false);
 	result = CHECK("asdfghjkl", QWERTY);
 	TEST_CHECK(result == true);
-	result = CHECK("Merry Christmas", REVERSE);
+	result = CHECK("MerryChristmas", REVERSE);
 	TEST_CHECK(result == false);
 }
 
