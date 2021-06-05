@@ -108,7 +108,7 @@ void test_many_char_phrase(void)
 {
 	bool result;
 
-	char phrase1[] = "Hello World";
+	char phrase1[] = "HelloWorld";
 	SORT(phrase1, STANDARD);
 	result = CHECK(phrase1, STANDARD);
 	TEST_CHECK(result == true);
