@@ -1,14 +1,18 @@
 # Programming Assignment I
 
-*Last modified: 06/05/2021 at 8:11AM*
+*Last modified: 06/05/2021 at 10:36AM*
+
+*Post on Piazza if you have any questions about the following document so that everyone can benefit from our answer. Otherwise, email me or Zhaoning (see syllabus for our email addresses).*
 
 ## Setup
+
+### Downloading the code for the first time
 
 To download this assignment onto your ecegrid machine, run:
 ```
 git clone https://github.com/RayaneCTX/ECE264-Summer-2021.git
 ```
-This will create a directory named **ECE264-Summer-2021**. Do not modify its name or anything inside. Doing so can complicate the process of downloading any updates to this assignment. Specifically, do not start working on the assignment from inside that directory. First, create a copy of the directory with
+This will create a directory named **ECE264-Summer-2021** that contains everything you see right here. Do not modify its name or anything inside. Doing so can complicate the process of downloading any updates to this assignment. Specifically, do not start working on the assignment from inside that directory. First, create a copy of the directory with
 ```
 cp -R ECE264-Summer-2021 <copy name>
 ```
@@ -18,11 +22,27 @@ cd <copy name>
 cd src
 vim sort.c
 ```
-Before you start writing code however, please read through the rest of this document. In the case where we have to make modifications to the provided code on this repository, you'll need to update your local repository. Navigate to your local git repository (it'll probably be the directory named **ECE264-Summer-2021**), and from there, run:
+We will refer to the `<copy name>` directory as `$WORK` from now on.
+
+### Downloading changes to the assignment
+
+Sometimes, we will make modifications to an assignment after you have already downloaded it and started working on it. To avoid surprises, you will need to keep up-to-date with any modification by pulling changes regularily. If you are in this situation, you will want to first have a look at what the modifications are. Navigate to the **ECE264-Summer-2021** directory and run:
+```
+git log --name-status -<number of commits to display>
+```
+where `<number of commits to display>` is the number of commits to the GitHub repository you want to display information for starting with the most recent commit. Commits are committed changes to the repository that we have made. The command
+```
+git log --name-status -5
+```
+will display the latest 5 commits to the repository, listing out any files deleted, added or modified for each commit. Each commit is dated, so you need only look at commits that occurred after the last time cloned the repository or pulled changes from it. To look at the actual changes to the code, run:
+```
+git log -p -<number of commits to display>
+```
+This will show exactly what changes have been made to the assignment. To pull the changes (that is, make your local repository up-to-date), run:
 ```
 git pull
 ```
-to pull all changes. You may then use `git diff` to find out what the changes where. The changes we make in these instances will never be significant enough that it forces you to re-write code.
+Given that changes we may make to an assignment will be minor, you will find it easy to incorporate the changes to your existing work.
 
 ## Goals
 
@@ -96,7 +116,7 @@ You'll find many more examples in the provided unit test source file for this fu
 
 #### Description
 
-This function sorts the provided phrase in lexicographical order, as determined by the provided alphabet.
+This function sorts the provided phrase in lexicographical order, as determined by the provided alphabet, using selection sort.
 
 #### Return Value
 
@@ -118,9 +138,13 @@ Capitalized letters take precedence over their corresponding lower case letters.
 * `sort_lexicographically("HelloWorld", "abcdefghijklmnopqrstuvwxyz")` should sort the phrase into `"deHllloorW"`,
 * `sort_lexicographically("HelloWorld", "qwertyuiopasdfghjklzxcvbnm")` should sort the phrase into `"WeroodHlll"`.
 
+### Helper Functions
+
+You will want to (but are not required to) create helper functions as you write your code (e.g. a helper function to swap characters inside the phrase). These helper functions should be defined **outside** of the `#ifndef` preprocessor guardsas much as possible. If you keep the helper function definition inside of these guards, we could run into potential problems during grading if your helper function is used by several required functions.
+
 ## Grading
 
-To grade this assignment, we will use the exact same unit test suite as is provided to you (only for this assignment). When you look into the unit test source files (**test_check_lexicographical_order.c** and **test_sort_lexicographically.c**), you'll notice that the unit test for each function is divided into test functions which are named according to what they are testing. Each one is a test case your code either passes or fails. All of them will be weighted the same for this assignment. To summarize, pass all test cases provided in the unit test suite and you will get 100% on this assignment.
+To grade this assignment, we will use the exact same unit test suite as is provided to you (only for this assignment). When you look into the unit test source files (**test_check_lexicographical_order.c** and **test_sort_lexicographically.c**), you'll notice that the unit test for each function is divided into test functions which are named according to what they are testing. Each one is a test case your code either passes or fails. All of them will be weighted the same for this assignment. There is ample opportunity for partial credit.
 
 ## How do I start?
 
@@ -160,7 +184,7 @@ to run the unit test for the check function. Once all test cases pass for that f
 ```
 make run-test-sort
 ```
-to test the sort function. Once all provided test cases pass, you can be confident that you will earn 100%. Make sure your code compiles with the required GCC flags!
+to test the sort function. Note that the unit test suite for the sorting function relies on a working implementation of your checking function. If your checking function does not work properly, whatever `make run-test-sort` outputs is probably way off. When we grade your, we will use our own version of the checking function so as to isolate each function and provide partial credit (that's why we have the preprocessor guards `#ifndef GRADE_SORT` and `#ifndef GRADE_CHECK`). Once all provided test cases pass, you can be confident that you will earn 100%. Make sure your code compiles with the required GCC flags!
 
 ## Submission
 
@@ -168,4 +192,4 @@ Navigate to the **src** directory where you **sort.c** file is, and compress it 
 ```
 zip sort.zip sort.c
 ```
-Then, upload the **sort.zip** file to Brightspace in the appropriate submission box.
+Then, upload the **sort.zip** file to Brightspace in the appropriate submission box. Only the last submission is kept by Brightspace, and that's the one we will grade.

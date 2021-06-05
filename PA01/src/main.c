@@ -6,16 +6,6 @@
 
 int main()
 {
-  //
-  // Write your test code here for this assignment.
-  //
-  // For example, call you check function:
-  // bool ordered = check_lexicographical_order("abc", "abcdefghijklmnopqrstuvwxyz");
-  // 
-  // and verify that ordered is true in this case.
-  //
-  // When you are getting close to completing the assignment, start running the
-  // unit tests provided (see README.md).
-  //
+	// Add test code here initially.
 	return EXIT_SUCCESS;
 }
