@@ -1,5 +1,7 @@
 # Programming Assignment I
 
+*Last updated: 06/05/2021 at 1:49AM*
+
 ## Setup
 
 To download this assignment onto your ecegrid machine, run:
@@ -40,7 +42,13 @@ Part of this assignment requires you to implement selection sort to sort the ele
 
 ## Requirements
 
-For this assignment, you are required to implement two function: `check_lexicographical_order()` and `sort_lexicographically()`. The requirements for each are defined in the subsections below.
+For this assignment, you are required to implement two function: `check_lexicographical_order()` and `sort_lexicographically()`. The requirements for each are defined in the subsections below. Notice the presence of the following preprocessor blocks around the functions:
+```
+#ifndef TEST_CHECK
+  ...
+#endif
+```
+DO NOT REMOVE THESE!
 
 ### Check Lexicographical Order
 
