@@ -1,12 +1,6 @@
 # Programming Assignment I
 
-*Last updated: 06/05/2021 at 1:49AM*
-
-If you have downloaded the code (as described below) before the date above, you'll need to update your local repository. Navigate to your local git repository for this course (it'll probably be the directory named **ECE264-Summer-2021**), and from there, run:
-```
-git pull
-```
-to pull all changes.
+*Last modified: 06/05/2021 at 1:49AM*
 
 ## Setup
 
@@ -24,7 +18,11 @@ cd <copy name>
 cd src
 vim sort.c
 ```
-Before you start writing code however, please read through the rest of this document.
+Before you start writing code however, please read through the rest of this document. In the case where we have to make modifications to the provided code on this repository, you'll need to update your local repository. Navigate to your local git repository (it'll probably be the directory named **ECE264-Summer-2021**), and from there, run:
+```
+git pull
+```
+to pull all changes. You may then use `git diff` to find out what the changes where. The changes we make in these instances will never be significant enough that it forces you to re-write code.
 
 ## Goals
 
