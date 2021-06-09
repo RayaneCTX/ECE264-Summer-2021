@@ -2,7 +2,7 @@
 
 *Last modified: 06/05/2021 at 10:36AM*
 
-*Post on Piazza if you have any questions about the following document so that everyone can benefit from our answer. Otherwise, email me or Zhaoning (see syllabus for our email addresses).*
+*Post on Piazza if you have any questions about the following document so that everyone can benefit from our answer. Otherwise, email Rayane or Zhaoning (see syllabus for our email addresses).*
 
 ## Setup
 
