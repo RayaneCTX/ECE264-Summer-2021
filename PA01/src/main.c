@@ -7,5 +7,6 @@
 int main()
 {
 	// Add test code here initially.
+	// Test comment
 	return EXIT_SUCCESS;
 }
