@@ -13,6 +13,7 @@
 
 #include "convert.h"
 
+#if !defined(GRADE_NUM_TO_CHAR) && !defined(GRADE_CONVERT_BASE)
 int convert_char_to_num(char c) 
 {
 	if (c >= '0' && c <= '9')
@@ -22,7 +23,9 @@ int convert_char_to_num(char c)
   	else
     		return -1;  // -1 means invalid
 }
+#endif
 
+#if !defined(GRADE_CHAR_TO_NUM) && !defined(GRADE_CONVERT_BASE)
 char convert_num_to_char(int n) 
 {
 	if (n >= 0 && n <= 9)
@@ -32,7 +35,9 @@ char convert_num_to_char(int n)
   	else
     		return 0; // 0 means invalid
 }
+#endif
 
+#if !defined(GRADE_CHAR_TO_NUM) && !defined(GRADE_NUM_TO_CHAR)
 void convert_base(char * numStrRep, int inputBase, int outputBase)
 {
 	// First, we are going to convert the number into a base
@@ -75,6 +80,7 @@ void convert_base(char * numStrRep, int inputBase, int outputBase)
   	}
 	printf("\n");
 }
+#endif
 ////////////////////////////////////////////////////////////////////////////////
 //                                END OF FILE                                 //
 ////////////////////////////////////////////////////////////////////////////////
