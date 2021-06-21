@@ -107,7 +107,7 @@ This function converts a number from one base to another, and prints the convert
 
 #### Return Value
 
-This function has no return value, and instead prints the converted number to `stdout`. If any failure occurred while converting the number, however, the program is aborted (i.e. `exit()` is called).
+This function has no return value, and instead prints the converted number to `stdout`. If any failure occurred while converting the number, however, the function should return without printing anything.
 
 #### Examples
 
