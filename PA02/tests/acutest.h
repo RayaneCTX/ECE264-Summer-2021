@@ -1797,12 +1797,13 @@ size_t getFilesize(const char* filename) {
 
 #define TEST_STDOUT_EQUALS(thunk, expected) \
   { \
-    char *buf = calloc(strlen(expected) * 2 + 1, 1); /* use a 2x buffer to hopefully avoid overflow */ \
+    char *buf = calloc(1024 * 1024, 1); /* Use a large enough buffer to avoid overflow */ \
     freopen("/dev/null", "a", stdout); \
     setbuf(stdout, buf); \
     thunk; \
     freopen("/dev/tty", "a", stdout); \
-    acutest_check_(memcmp(buf, expected, strlen(expected)) == 0, __FILE__, __LINE__, "%s != %s", buf, expected); \
+    acutest_check_(strlen(buf) == strlen(expected) && memcmp(buf, expected, strlen(expected)) == 0 \
+        , __FILE__, __LINE__, "%s != %s", buf, expected); \
     free(buf); \
   }
 
@@ -1812,15 +1813,19 @@ size_t getFilesize(const char* filename) {
     int fd = open(fname, O_RDONLY, 0); \
     void* filecontent= mmap(NULL, filesize, PROT_READ, MAP_SHARED, fd, 0); \
     \
-    char *buf = calloc(filesize * 2 + 1, 1); /* use a 2x buffer to hopefully avoid overflow */ \
+    char *buf = calloc(1024 * 1024, 1); /* Use a large enough buffer to avoid overflow */ \
     freopen("/dev/null", "a", stdout); \
     setbuf(stdout, buf); \
     thunk; \
     freopen("/dev/tty", "a", stdout); \
     \
-    while (((char *)filecontent)[filesize - 1] == '\n') /* Strip newline chars */ \
+    int bufsize = strlen(buf); \
+    while (bufsize > 0 && buf[bufsize - 1] == '\n') /* Strip newline chars */ \
+      bufsize--; \
+    while (filesize > 0 && ((char *)filecontent)[filesize - 1] == '\n') \
       filesize--; \
-    acutest_check_(memcmp(buf, filecontent, filesize) == 0, __FILE__, __LINE__, "%s != %s", buf, (char *)filecontent); \
+    acutest_check_(bufsize == filesize && memcmp(buf, filecontent, filesize) == 0, \
+        __FILE__, __LINE__, "%s != %s", buf, filesize > 0 ? (char *)filecontent : ""); \
     free(buf); \
     munmap(filecontent, filesize); \
     close(fd); \

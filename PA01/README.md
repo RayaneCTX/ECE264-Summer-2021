@@ -70,7 +70,7 @@ Part of this assignment requires you to implement selection sort to sort the ele
 
 For this assignment, you are required to implement two function: `check_lexicographical_order()` and `sort_lexicographically()`. The requirements for each are defined in the subsections below. Notice the presence of the following preprocessor blocks around the functions:
 ```
-#ifndef TEST_CHECK
+#ifndef GRADE_CHECK
   ...
 #endif
 ```

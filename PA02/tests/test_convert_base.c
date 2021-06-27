@@ -21,7 +21,7 @@ void test_single_digit()
 	// Because the convert_base function outputs to stdout, we have provided
 	// the macro TEST_STDOUT_EQUALS that can be used to compare its output
 	// to some string. An example usage is shown below.
-	TEST_STDOUT_EQUAL(convert_base("5", 10, 2), "101");
+	TEST_STDOUT_EQUALS(convert_base("5", 10, 2), "101\n");
 }
 
 void test_many_digit()
@@ -44,7 +44,7 @@ void test_invalid_base()
 TEST_LIST = {
   { "test_single_digit", test_single_digit },
   { "test_many_digit", test_many_digit },
-  { "test_val_does_not_match_base_from", test_val_does_not_match_base_from },
+  { "test_invalid_number_base_pair", test_invalid_number_base_pair },
   { "test_invalid_base", test_invalid_base },
   { NULL, NULL }
 };

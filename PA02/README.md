@@ -1,6 +1,6 @@
 # Programming Assignment II
 
-*Last modified: 06/16/2021 at 9:30PM*
+*Last modified: 06/21/2021 at 2:55PM*
 
 ## Setup
 
@@ -107,7 +107,7 @@ This function converts a number from one base to another, and prints the convert
 
 #### Return Value
 
-This function has no return value, and instead prints the converted number to `stdout`. If any failure occurred while converting the number, however, the program is aborted (i.e. `exit()` is called).
+This function has no return value, and instead prints the converted number to `stdout`. If any failure occurred while converting the number, however, the function should return without printing anything to `stdout`.
 
 #### Examples
 
@@ -143,7 +143,9 @@ As expected, there is one unit test file per required function.
 
 * `test_convert_base.c`
 
-Each file has empty test functions within it. You should fill in these functions with appropriate `TEST_CHECK` and `TEST_MSG` calls that test what the function name claims to test. Your unit tests should be thorough and give you confidence that the functions inside **src/convert.c** are correctly implemented. Watch the lecture material on test-driven-development to learn about how to achieve this.
+Each file has empty test functions within it. You should fill in these functions with appropriate `TEST_CHECK` and `TEST_MSG` calls that test what the function name claims to test. Your unit tests should be thorough and give you confidence that the functions inside **src/convert.c** are correctly implemented.
+
+For the `convert_base` function, because the output to be tested is printed to `stdout`, we cannot write a unit test using `TEST_CHECK` without first redirecting `stdout`. We have provided the macro `TEST_STDOUT_EQUALS` that you can use to compare your function's output to `stdout` against a string. An example usage of this macro is given in **tests/test_convert_base.c**.
 
 ## How this assignment will be graded
 
