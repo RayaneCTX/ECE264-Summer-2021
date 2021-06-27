@@ -4,9 +4,19 @@
 
 #include "sort.h"
 
+#define ALPHABET "abcdefghijklmnopqrstuvwxyz"  
+
 int main()
 {
-	// Add test code here initially.
-	// Test comment
+	// Test with empty phrase
+	char phrase[] = "";
+	sort_lexicographically(phrase, ALPHABET);
+	printf("Output: %s\n", phrase);
+
+	// Test with single character phrase
+	char phrase2[] = "A";
+	sort_lexicographically(phrase2, ALPHABET);
+	printf("Output: %s\n", phrase2);	
+
 	return EXIT_SUCCESS;
 }
