@@ -1831,6 +1831,14 @@ size_t getFilesize(const char* filename) {
     close(fd); \
   }
 
+#define TEST_TWO_FILES_EQUAL(fname1, fname2) \
+  { \
+    char command[256]; \
+    sprintf(command, "diff -wB \"%s\" \"%s\"", fname1, fname2); \
+    int ret = system(command); \
+    acutest_check_(ret == 0, \
+        __FILE__, __LINE__, "file \"%s\" != file \"%s\"", fname1, fname2); \
+  }
 
 
 #ifdef _MSC_VER
