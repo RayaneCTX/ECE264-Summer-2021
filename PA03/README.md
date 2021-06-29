@@ -55,6 +55,8 @@ Or,
     4
 1
 ```
+Assume input files have no more than 100 lines (integers).
+
 
 ## Compiling and Linking
 
