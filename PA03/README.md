@@ -1,6 +1,8 @@
 # Programming Assignment III
 
-*Last modified: 06/28/2021 at 7:30PM*
+*Last modified: 06/29/2021 at 9:47AM*
+
+Corrected an error in the Makefile.
 
 ## Goals
 
