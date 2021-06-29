@@ -129,24 +129,24 @@ test-sort-int: $(TEST_SORT_INT_OBJ_FILES) $(TEST_HDR_FILES) | $(BLDDIR)
 ################################################################################
 run-debug: debug
 	@echo -e "Running debug...\n"
-	@$(BLDDIR)/$@
+	@./$(BLDDIR)/$@
 
 run-test-count-int: test-count-int
 	@echo -e "Running the unit tests for the count int function...\n"
-	@$(BLDDIR)/$@
+	@./$(BLDDIR)/test-count-int
 
 run-test-read-int: test-read-int
 	@echo -e "Running the unit test for the read int function...\n"
-	@$(BLDDIR)/$@
+	@./$(BLDDIR)/test-read-int
 
 run-test-write-int: test-write-int
 	@echo -e "Running the unit test for the write int function...\n"
-	@$(BLDDIR)/$@
+	@./$(BLDDIR)/test-write-int
 
 run-test-compare-int: test-compare-int
 	@echo -e "Running the unit test for the compare int function...\n"
-	@$(BLDDIR)/$@
+	@./$(BLDDIR)/test-compare-int
 
 run-test-sort-int: test-sort-int
 	@echo -e "Running the unit test for the sort int function...\n"
-	@$(BLDDIR)/$@
+	@./$(BLDDIR)/test-sort-int
