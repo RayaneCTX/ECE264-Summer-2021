@@ -64,7 +64,9 @@ to compile and link all of your code from src (including main.c) into build/debu
 ```
 make run-debug
 ```
-to do the same but also run the executable. Note that if your program expects inputs through `argv` (as the template main.c does), you'll need to navigate to the bottom of the Makefile and add the arguments in the appropriate location in the run-debug recipe. Alternatively, you may simply use the command line directly CS 159 style.
+to do the same but also run the executable. Note that if your program expects inputs through `argv` (as the template main.c does), you'll need to navigate to the bottom of the Makefile and add the arguments in the appropriate location in the run-debug recipe. Alternatively, you may simply use the command line directly CS 159 style. 
+
+If you decide to compile directly without using the Makefile, make sure the compilation command uses `-Wall -Wextra -Wvla -Werror`. If you are compiling a unit test, remove `-Wvla` because acutest uses it. Once again, we are using these flags to compile your code for grading. If we cannot compiler your code, and it is not a problem on our end, you will receive a zero.
 
 ## Testing Your Code
 
