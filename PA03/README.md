@@ -72,7 +72,7 @@ If you decide to compile directly without using the Makefile, make sure the comp
 
 ## Testing Your Code
 
-*I'll cover this in separate material.*
+*See June 29th lecture for additional material.*
 
 There is a unit testing file for each function to be implemented:
 
