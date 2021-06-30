@@ -12,7 +12,7 @@
  * as differences. Returns 0 if the two files are the same, returns
  * non-zero otherwise.
  */
-int diff(fname1, fname2) {
+int diff(char *fname1, char *fname2) {
   	char command[256];
   	sprintf(command, "diff -wB \"%s\" \"%s\"", fname1, fname2);
 	return system(command);
