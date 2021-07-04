@@ -1,28 +1,37 @@
 # Programming Assignment IV
 
+*Last modified: 07/04/2021 at 5:30PM*
+
 ## Goals
 
-The goals of this assignments are:
+Your goals in this assignments are:
 
-* To get you familiar with C structs,
-
-* To get you familiar with C dynamic memory management using `malloc()` and `free()`.
+* To build famliarity with using structs,
+* To learn how to setup your own Makefile,
+* To learn how to design your own unit test suite,
+* To learn about dynamic memory and how to use `malloc`/`free`.
 
 ## Structure
 
 The structure of the code for this assignment is as follows:
 
-* `src` contains 3 files: `count_words.c` contains 4 functions you need to fill in.
-`count_words.h` and `main.c` are already completed, and you should not modify them.
+* `src`: count.c contains four functions you need to implement. count.h contains
+        the declarations for the functions in count.c, as well as the declaration for the `WordCount`
+        struct. You'll want to refer to this file often since you will be using this structure in your code.
+        The main.c file contains template code that you can use and modify to do some quick testing of your
+        code. Thorough testing should be implemented and maintained inside of your unit test files.
 
-* `tests` contains a test file for each function you should implement.
+* `tests`:  there are three unit testing files, one for each of the functions you have to implement excluding
+            `free_count_array` (since there isn't much in the way of testing that). The unit testing files as
+            given to you are just skeleton files. We are getting to the point were you are expected to build
+            your own testing suite for the assignments.
 
 ## Background
 
 ### Structs
 
-Struct is a user-define data type available in C that allows to combine
-variables of different types into a single type.
+This assignment requires you to work with a very basic C struct. Use this assignment as a way to get familiar with that.
+Future assignments will make much more complex use of structures.
 
 ### Dynamic Memory Allocation
 
@@ -35,8 +44,8 @@ for more information on C memory allocation.
 
 ## Requirements
 
-This homework requires you to count word frequency of a input file,
-and print the word counts in descending order.
+This homework requires you to count word frequencies of a input file,
+and print the word frequencies in descending order.
 Which words to count is specified by a "vocabulary" file.
 See the following example:
 
@@ -88,29 +97,32 @@ You need to implement the following functions:
 
 ## Compiling and Linking
 
-You should adapt the example Makefile template on Brightspace to compile and run your code.
+You should adapt the example Makefile template on Brightspace to compile and run your code. Make sure
+the appropriate warning and error flags (`-Wall -Wextra -Wvla -Werror`) are included in your compilation commands.
+Also, remember that you must remove `-Wvla` from the compilation command to be able to compile unit testing files.
 
-## Testing your code
+Not using a Makefile to automate compiling and running code will be your doom. If it isn't as easy as running
+a single command to run unit tests, you will soon find yourself not running unit tests often enough. It's 
+human nature. You must automate this process, and constantly give yourself feedback on your code.
 
-There is a unit testing file for each function to be implemented:
+## Testing
 
-* `test_make_counter_arr.c`
+We have provided only the skeletons for the unit testing files. You must write your unit tests
+in these files.
 
-* `test_count_words.c`
+## Grading
 
-* `test_print_words_descending_freq.c`
-
-Each of the test files contains multiple unit test functions,
-and each unit test function covers a specific input scenario.
-**Test cases within each test function are not sufficient**,
-so you should add additional test cases to the unit test functions.
+As in previous programming assignments, we are grading you mainly on the functionality of your code.
+However, on top of that, we will check your code for memory errors (using valgrind). You will lose
+some amount of points for each memory error that your code produces and valgrind catches. Refer to
+lecture and additional material on Brightspace for the full grading policy concerning memory errors.
 
 ## Submission
 
-Navigate to the src directory where you `count_words.c` file is, and compress it with:
+Navigate to the src directory where you `count.c` file is, and compress it with:
 
 ```
-zip count_words.zip count_words.c
+zip count.zip count.c
 ```
 
 Then, upload the zip file to Brightspace in the appropriate submission box.
