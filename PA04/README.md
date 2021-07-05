@@ -1,6 +1,6 @@
 # Programming Assignment IV
 
-*Last modified: 07/04/2021 at 11:35PM*
+*Last modified: 07/05/2021 at 9:57PM*
 
 ## Goals
 
@@ -90,7 +90,7 @@ You need to implement the following functions:
 | Function | Input | Output/Effect |
 |-|-|-|
 | `alloc_count_array()` | - `char *vocabFile`: path to a vocabulary file (input)<br>- `WordCount **countArray`: pointer to a `WordCount *` variable that will hold the newly created counter array (output)<br>- `int *size`: pointer to an `int` that will hold the length of the counter array (output) | - Read the vocabulary file, assuming each line is a word. You can assume there is no duplicate words in the vocabulary file.<br>- Allocate a `WordCount` array with length equal to the number of words in the vocabulary. The array elements correspond to words in the vocabulary, in the order they appear in the vocabulary file.<br>- For each `WordCount` array element, its `word` field should hold the corresponding word, and its `count` field should be initialized to 0.- Assign the newly created array to `*countArray` , and assign the array's length to `*size`.<br>- Return `false` if anything fails. Otherwise, return `true`. |
-| `count_words_from_file()` | - `char *inputFile`: path to a file<br>- `WordCount *countArray`: a counter array used to store the word counting results. You can assume all counters are initialized to 0. | - Read each word in the `input_file`. Note that the file might have multiple lines.<br>- For each word, if the word is in the counter array, increment its corresponding count by 1.<br>- The counter is case sensitive, e.g. you can assume "Hello" and "hello" are two different words. Words will not span across lines.<br>- Return `false` if anything fails. Otherwise, return `true`. |
+| `count_words_from_file()` | - `char *inputFile`: path to a file<br>- `WordCount *countArray`: a counter array used to store the word counting results. You can assume all counters are initialized to 0. | - Read each word in the `input_file`. Note that the file may have multiple lines.<br>- Words are separated from one another by one or more white-space characters. <br>- For each word, if the word is in the counter array, increment its corresponding count by 1.<br>- The counter is case sensitive, e.g. you can assume "Hello" and "hello" are two different words. Words will not span across lines.<br>- Hyphenated words count as single words (i.e. up-to-date would count as a single word). <br>- Return `false` if anything fails. Otherwise, return `true`. |
 | `print_words_descending_freq()` | - `WordCount *countArray`: a counter array containing word count results | - Print each word and its count in decreasing count order. For words that have the same count, the alphabetically smaller word should go before.<br>- Each line should correspond to a word and look like `<word> <count>`.<br>- Return `false` if anything fails. Otherwise, return `true`.<br>(Hint: think about using `qsort()` like you did in PA03) |
 | `free_count_array()` | - `WordCount *countArray`: a counter array to be freed | - Free the memory of `countArray`<br>- Return `false` if anything fails. Otherwise, return `true`. |
 
