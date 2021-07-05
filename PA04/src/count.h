@@ -15,9 +15,9 @@ typedef struct _WordCount {
 } WordCount;
 
 bool alloc_count_array(char *vocabFile, WordCount **countArray, int *size);
-bool count_words_from_file(char *inputFile, WordCount *countArray);
-bool print_words_descending_freq(WordCount *countArray);
-bool free_count_array(WordCount *countArray);
+bool count_words_from_file(char *inputFile, WordCount *countArray, int size);
+bool print_words_descending_freq(WordCount *countArray, int size);
+bool free_count_array(WordCount *countArray, int size);
 
 #endif // __COUNT_H__
 ////////////////////////////////////////////////////////////////////////////////
