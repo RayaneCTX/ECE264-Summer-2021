@@ -1,14 +1,15 @@
 ////////////////////////////////////////////////////////////////////////////////
-//                                  count.c                                   //
+///                                 count.c                                  ///
 ////////////////////////////////////////////////////////////////////////////////
 #include <stdio.h>
 #include <string.h>
 #include <stdbool.h>
-#include "count_words.h"
+
+#include "count.h"
 
 
-#ifndef !defined(GRADE_COUNT_WORDS) &&
-        !defined(GRADE_PRINT_WORDS) &&
+#if     !defined(GRADE_COUNT_WORDS) && \
+        !defined(GRADE_PRINT_WORDS) && \
         !defined(GRADE_FREE_WORDS)
 bool alloc_count_array(char *vocabFile, WordCount **countArray, int *size)
 {
@@ -23,8 +24,8 @@ bool alloc_count_array(char *vocabFile, WordCount **countArray, int *size)
 #endif // GRADE_ALLOC_WORDS (essentially)
 
 
-#ifndef !defined(GRADE_ALLOC_WORDS) &&
-        !defined(GRADE_PRINT_WORDS) &&
+#if     !defined(GRADE_ALLOC_WORDS) && \
+        !defined(GRADE_PRINT_WORDS) && \
         !defined(GRADE_FREE_WORDS)
 bool count_words_from_file(char *inputFile, WordCount *countArray, int size)
 {
@@ -38,8 +39,8 @@ bool count_words_from_file(char *inputFile, WordCount *countArray, int size)
 #endif // GRADE_COUNT_WORDS (essentially)
 
 
-#ifndef !defined(GRADE_ALLOC_WORDS) &&
-        !defined(GRADE_COUNT_WORDS) &&
+#if     !defined(GRADE_ALLOC_WORDS) && \
+        !defined(GRADE_COUNT_WORDS) && \
         !defined(GRADE_FREE_WORDS)
 bool print_words_descending_freq(WordCount *countArray, int size)
 {
@@ -54,8 +55,8 @@ bool print_words_descending_freq(WordCount *countArray, int size)
 #endif // GRADE_PRINT_WORDS (essentially)
 
 
-#ifndef !defined(GRADE_ALLOC_WORDS) &&
-        !defined(GRADE_COUNT_WORDS) &&
+#if     !defined(GRADE_ALLOC_WORDS) && \
+        !defined(GRADE_COUNT_WORDS) && \
         !defined(GRADE_PRINT_WORDS)
 bool free_count_array(WordCount *countArray)
 {
@@ -65,5 +66,5 @@ bool free_count_array(WordCount *countArray)
 }
 #endif // GRADE_FREE_WORDS (essentially)
 ////////////////////////////////////////////////////////////////////////////////
-//                                 END OF FILE                                //
+///                                END OF FILE                               ///
 ////////////////////////////////////////////////////////////////////////////////

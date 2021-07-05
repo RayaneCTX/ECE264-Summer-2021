@@ -1,12 +1,12 @@
 ////////////////////////////////////////////////////////////////////////////////
-//                                  main.c                                    //
+///                                 main.c                                   ///
 ////////////////////////////////////////////////////////////////////////////////
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
 #include <stdbool.h>
 
-#include "count_words.h"
+#include "count.h"
 
 
 int main(int argc, char **argv)
@@ -15,7 +15,7 @@ int main(int argc, char **argv)
    * As always, this file is present just for quick and dirty testing. Thorough
    * testing should be included in the unit test files. Below is an example
    * usage of the functions in a complete program. THIS DOES NOT CONSTITUTE
-   * THROROUGH TESTING.
+   * THOROUGH TESTING.
    */
 
    // Program inputs are fed using the command line.
@@ -37,12 +37,12 @@ int main(int argc, char **argv)
    }
 
    // Count the word frequencies from the input file.
-   if ( !count_word_from_file(argv[2], countArray) ) {
+   if ( !count_words_from_file(argv[2], countArray, countArraySize) ) {
        return EXIT_FAILURE;
    }
 
    // Print the words and their frequencies in descending order.
-   if ( !print_words_descending_freq(countArray) ) {
+   if ( !print_words_descending_freq(countArray, countArraySize) ) {
        return EXIT_FAILURE;
    }
 
@@ -54,5 +54,5 @@ int main(int argc, char **argv)
    return EXIT_SUCCESS;
 }
 ////////////////////////////////////////////////////////////////////////////////
-//                                 END OF FILE                                //
+///                                END OF FILE                               ///
 ////////////////////////////////////////////////////////////////////////////////
