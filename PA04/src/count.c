@@ -26,7 +26,7 @@ bool alloc_count_array(char *vocabFile, WordCount **countArray, int *size)
 #ifndef !defined(GRADE_ALLOC_WORDS) &&
         !defined(GRADE_PRINT_WORDS) &&
         !defined(GRADE_FREE_WORDS)
-bool count_words_from_file(char *inputFile, WordCount *countArray)
+bool count_words_from_file(char *inputFile, WordCount *countArray, int size)
 {
     /*
      * Read 'inputFile' and count the number of occurrences of words into the
@@ -41,7 +41,7 @@ bool count_words_from_file(char *inputFile, WordCount *countArray)
 #ifndef !defined(GRADE_ALLOC_WORDS) &&
         !defined(GRADE_COUNT_WORDS) &&
         !defined(GRADE_FREE_WORDS)
-bool print_words_descending_freq(WordCount *countArray)
+bool print_words_descending_freq(WordCount *countArray, int size)
 {
     /*
      * Print "<word> <count>" (excluding the double quotes), one word per line,
