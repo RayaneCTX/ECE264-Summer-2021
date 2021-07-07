@@ -1824,7 +1824,7 @@ size_t getFilesize(const char* filename) {
       bufsize--; \
     while (filesize > 0 && ((char *)filecontent)[filesize - 1] == '\n') \
       filesize--; \
-    acutest_check_(bufsize == filesize && memcmp(buf, filecontent, filesize) == 0, \
+    acutest_check_(bufsize == (int) filesize && memcmp(buf, filecontent, filesize) == 0, \
         __FILE__, __LINE__, "%s != %s", buf, filesize > 0 ? (char *)filecontent : ""); \
     free(buf); \
     munmap(filecontent, filesize); \
