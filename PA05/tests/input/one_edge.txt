@@ -2,6 +2,6 @@
 # A graph with exactly one edge.
 #
 
-1		# There is one edge in this graph.
+2		# There are two nodes in this graph.
 0	1	# 0 --> 1
 
