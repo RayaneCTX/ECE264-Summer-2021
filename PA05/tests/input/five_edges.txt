@@ -2,7 +2,7 @@
 # A graph with five edges.
 #
 
-5		# Five edges in this graph.
+4		# Five edges in this graph.
 0	1
 0	2
 1	2
