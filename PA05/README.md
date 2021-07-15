@@ -113,7 +113,7 @@ You need to implement the following functions:
 
 | Function | Input | Description |
 |-|-|-|
-| `read_graph_from_file()` | - `char *filename`: filename/path to the input graph file. | This function reads in a graph from a file into a graph structure, essentially converting from one representation to the other. See the comment in graph.c for the details. |
+| `read_graph_from_file()` | - `char *filename`: filename/path to the valid input graph file. | This function reads in a graph from a file into a graph structure, essentially converting from one representation to the other. See the comment in graph.c for the details. |
 | `write_graph_to_file()` | - `char *filename`: filename/path to the output file.<br>- `Graph const *graph`: a pointer to the graph structure to be written out to the output file. | This function write out a file from a `Graph` structure in memory to a file. See the comment in graph.c for the details. |
 | `transpose_graph()` | - `Graph *graph`: a pointer to the graph to be transposed | This function should transpose the input graph. See the comment in graph.c for the details. |
 | `combine_graph()` | - `Graph *first`: pointer to the first graph. <br>- `Graph *second`: pointer to the second graph. | Combine two graphs into a new one. See the comment in graph.c for the details. |
