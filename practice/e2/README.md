@@ -38,4 +38,4 @@ First, navigate to the parent directory of e2, and run
 zip -r e2.zip e2
 ```
 The -r argument means recursive compression, so that everything inside of the e2 directory (the src and tests directories) are compressed and added
-to the archive. Submit the .zip file on Brightspace.
+to the archive. Before submitting, move the .zip file to its own directory and unzip it there to make sure it includes everything you want (source code, Makefile, unitests, etc.). Submit the .zip file on Brightspace.
