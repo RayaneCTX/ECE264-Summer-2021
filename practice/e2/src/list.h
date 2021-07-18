@@ -24,10 +24,11 @@ void free_node(Node *node);
 /*
  * insert_sorted()
  *
- * Assume that the linked list pointed to by head is in ascending order 
+ * Assume that the linked list pointed to by head is sorted in ascending order 
  * according to each node's value attribute. Insert a node into the list while
  * maintaining the sorted order (i.e. find the right spot in the list to perform
- * the insertion). Return the address of the head of the linked list.
+ * the insertion). Return the address of the head of the linked list. Assume
+ * that an empty list is sorted by default.
  */
 Node *insert_sorted(Node *head, Node *node);
 
@@ -37,7 +38,8 @@ Node *insert_sorted(Node *head, Node *node);
  * Scan the linked list pointed to by head and extract all nodes with value
  * attribute between lowerBound and upperBound (inclusive) into a new linked
  * list. Assume lowerBound < upperBound. The address of the new list should be
- * stored at *extracted. *head should be updated if need be.
+ * stored at *extracted. *head should be updated if need be. Extraction means 
+ * that all nodes extracted must be removed from the list *head.
  */
 void extract_sublist(Node **head, Node **extracted, int lowerBound, int upperBound);
 
