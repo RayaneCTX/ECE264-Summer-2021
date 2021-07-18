@@ -39,7 +39,8 @@ Node *insert_sorted(Node *head, Node *node);
  * attribute between lowerBound and upperBound (inclusive) into a new linked
  * list. Assume lowerBound < upperBound. The address of the new list should be
  * stored at *extracted. *head should be updated if need be. Extraction means 
- * that all nodes extracted must be removed from the list *head.
+ * that all nodes extracted must be removed from the list *head. *extracted
+ * should be NULL is no node were extracted.
  */
 void extract_sublist(Node **head, Node **extracted, int lowerBound, int upperBound);
 
