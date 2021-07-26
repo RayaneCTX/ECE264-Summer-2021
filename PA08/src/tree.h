@@ -82,7 +82,8 @@ Tree *build_tree_from_files(char const *preOrderFile, char const *inOrderFile);
  * printing the desrired path from root to node (and not the reverse) is not.
  * There are several possible solutions. My favorite one involves using the
  * parent attribute I added to the tree node structure. Try to find an elegant
- * solution, as any recursive program should be.
+ * solution, as any recursive program should be. Essentially, you should assume
+ * that the parent attribute stores the address of the parent tree node.
  */
 void print_path_from_root_to_node(Tree *tree, int value);
 

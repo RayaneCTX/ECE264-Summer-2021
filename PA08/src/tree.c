@@ -54,7 +54,10 @@ void print_path_from_root_to_node(Tree *tree, int value)
 {
 	// Figuring out how to print the path in the correct order is the
 	// challenge here. I suggest making use of the parent attribute
-	// added to the tree node structure in tree.h.
+	// added to the tree node structure in tree.h. Again, just assume
+	// that the parent attribute stores the address of the parent node in
+	// the tree. Feel free to use another method to print the path if you
+	// wish.
 }
 #endif
 ////////////////////////////////////////////////////////////////////////////////
