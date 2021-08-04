@@ -5,7 +5,7 @@
 Your task is defined as follows:
 
 	- Implement the count_paths_with_even_weights function in tree.c.
-	- Write unit tests for both functions.
+	- Write unit tests for that function.
 
 
 count_paths_with_even_weights
