@@ -19,7 +19,7 @@ very similar. The only difference is described in the comment within bitmap.c.
 
 ## Examples
 
-Say your bitmap currently stores the bits
+Say your bitmap currently stores the following bits. NOTE THAT BELOW IS SIMPLY A SEQUENCE OF BITS AND DOES NOT REFLECT ANYTHING ABOUT HOW THAT ARRAY IS IMPEMENTED IN CODE. In this assignment, we just happen to be implementing the bitmap as an array of integers, where least significant bits get allocated first (which might contradict the example below if you are not aware of the previous statement).
 ```
 11100010010000...0000
 ```
