@@ -17,6 +17,24 @@ The background for the problem you are solving has been extensively defined and 
 your work off of that. You will find that, having watched the lectures, the code you must write for this assignment is
 very similar. The only difference is described in the comment within bitmap.c.
 
+## Examples
+
+Say your bitmap currently stores the bits
+```
+11100010010000...0000
+```
+
+Then, calling `alloc_bits(3)` will result in the bitmap
+```
+11111110010000...0000
+```
+and return 3. Calling `alloc_bits(3)` again will result in
+```
+11111110011110...0000
+```
+and return 10. Notice that the first two zeros are skipped over. The allocation was for 3 bits,
+thus 3 consecutive free bits need to be found.
+
 ## Requirement
 
 You must implement the `alloc_bits` and `free_bit` functions in bitmap.c. Read the comments in that file, then write your code
